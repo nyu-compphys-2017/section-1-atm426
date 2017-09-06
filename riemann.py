@@ -17,12 +17,6 @@ def hello_world(name=''):
     
 #Implement the Riemann Sum approximation for integrals.
 
-def fn( x ):
-
-    y = x**2.
-    return y
-
-
 def r_mann( a , b , N, fn ):
     """
     a : starting point
@@ -32,9 +26,13 @@ def r_mann( a , b , N, fn ):
     """
     
     width = (b - a) / N
-    print width
+    
     x = np.arange(a+width, b+width, width)
-    return x
+    y = fn( x )
+
+    integral = np.sum( y * width )
+
+    print integral
     
     
 
